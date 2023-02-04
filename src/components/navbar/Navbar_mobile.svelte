@@ -66,7 +66,7 @@
 							<strong> Deutsch</strong>
 						</summary>
 						<ul class="flex flex-col navDetails">
-							<a href="/german/german">{`Unregelmäßige Verben (${VerbenData.length})`}</a>
+							<a href="/german/irregular-verbs">{`Unregelmäßige Verben (${VerbenData.length})`}</a>
 							<a href="/german/goethe">{`Goethe (${Goethe.length})`}</a>
 						</ul>
 					</details>
