@@ -55,7 +55,7 @@
   </section>
 
 <style>
-
+/*
 .my-rotate-y-180 {
   transform: rotateY(180deg);
 }
@@ -74,5 +74,5 @@
 .backface-hidden {
   backface-visibility: hidden;
 }
-
+*/
 </style>
