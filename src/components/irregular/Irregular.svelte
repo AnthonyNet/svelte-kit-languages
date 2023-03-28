@@ -3,7 +3,7 @@
     import Input from '../card/Input.svelte';
 
 	export let myData: any;
-    
+
 	const score = 0;
 	let stars:number[]|[] = [];
 
@@ -16,7 +16,7 @@
 	const cz = myData[randomNumber].cz;
     propertyValues.shift();
 	const reverseArray = propertyValues.reverse();
-	
+
 
     const styles = {
 		section:
@@ -28,12 +28,12 @@
 		btn_div: 'border-t border-gray-300 text-gray-600',
 		h5: 'text-xl dark:bg-black font-medium mb-2 border-b border-gray-300',
 		ul: 'flex flex-col items-center relative h-[100px]'
-	};
+	} as const;
 </script>
 
 <section class={styles.section}>
 	<div class={styles.section_div}>
-		
+
 		<div class={styles.score_div}>
 			Celkové skóre: <span>0</span>
 		</div>
@@ -42,18 +42,18 @@
 		</div>
 
 		<div class={styles.stars__div}>
-		
+
 				<Star />
-			
+
 		</div>
 
 		<div class="px-6">
 			<h5 class={styles.h5}>{cz}</h5>
-	
+
 			<ul class={styles.ul} >
 
 				{#each reverseArray as props}
-			
+
 					<Input props={props}  />
 				{/each}
 			</ul>
