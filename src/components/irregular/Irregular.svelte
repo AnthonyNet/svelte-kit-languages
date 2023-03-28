@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Star from '../card/Star.svelte';
     import Input from '../card/Input.svelte';
+	import Button from '../card/Button.svelte';
 
 	export let myData: any;
 
@@ -25,7 +26,7 @@
 			'max-w-sm card my-8 xl:my-0 border-4 border-double border-blue-700 rounded-lg shadow-xl shadow-slate-600 text-center',
 		score_div: 'py-3 px-6 border-b border-gray-300',
 		stars__div: 'flex items-center justify-center py-3 border-b border-gray-300 text-yellow-500',
-		btn_div: 'border-t border-gray-300 text-gray-600',
+		btn_div: 'flex flex-col border-t border-gray-300 text-gray-600',
 		h5: 'text-xl dark:bg-black font-medium mb-2 border-b border-gray-300',
 		ul: 'flex flex-col items-center relative h-[100px]'
 	} as const;
@@ -53,9 +54,11 @@
 			<ul class={styles.ul} >
 
 				{#each reverseArray as props}
-
+				{console.log(props)}
+				{console.log(reverseArray)}
 					<Input props={props}  />
 				{/each}
+
 			</ul>
 
 			<div class={styles.btn_div}>
@@ -64,9 +67,7 @@
 		</div>
 
 		<div class={styles.btn_div}>
-			<button />
-
-			hints
+			<Button props={reverseArray} />
 		</div>
 	</div>
 </section>
