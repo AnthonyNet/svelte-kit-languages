@@ -7,7 +7,5 @@
 
 <div>
 	<button class={style.button}>hint</button>
-	<ul>
-
-	</ul>
+	<ul></ul>
 </div>
