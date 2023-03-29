@@ -19,7 +19,7 @@
 	const reverseArray = propertyValues.reverse();*/
 	const propsArray = [myData.base, myData.pastSimple, myData.pastParticiple]
 	console.log(propsArray);
-
+	const reversePropsArray = propsArray.reverse();
 
     const styles = {
 		section:
@@ -55,7 +55,7 @@
 
 			<ul class={styles.ul} >
 
-				{#each propsArray as props}
+				{#each reversePropsArray as props}
 
 					<Input props={props}  />
 				{/each}
