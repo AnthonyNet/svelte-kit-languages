@@ -8,15 +8,17 @@
 	const score = 0;
 	let stars:number[]|[] = [];
 
-	const randomNumber = Math.floor(Math.random() * myData.length);
+	//const randomNumber = Math.floor(Math.random() * myData.length);
 	/*------------------------------------------
     Props Data from Object to Array
          + first item deleted from Array
        -------------------------------------------*/
-    const propertyValues = Object.values(myData[randomNumber]);
+    /*const propertyValues = Object.values(myData[randomNumber]);
 	const cz = myData[randomNumber].cz;
     propertyValues.shift();
-	const reverseArray = propertyValues.reverse();
+	const reverseArray = propertyValues.reverse();*/
+	const propsArray = [myData.base, myData.pastSimple, myData.pastParticiple]
+	console.log(propsArray);
 
 
     const styles = {
@@ -33,7 +35,7 @@
 </script>
 
 <section class={styles.section}>
-	<div class={styles.section_div}>
+<div class={styles.section_div}>
 
 		<div class={styles.score_div}>
 			Celkové skóre: <span>0</span>
@@ -49,13 +51,12 @@
 		</div>
 
 		<div class="px-6">
-			<h5 class={styles.h5}>{cz}</h5>
+	<h5 class={styles.h5}>{myData.cz}</h5>
 
 			<ul class={styles.ul} >
 
-				{#each reverseArray as props}
-				{console.log(props)}
-				{console.log(reverseArray)}
+				{#each propsArray as props}
+
 					<Input props={props}  />
 				{/each}
 
@@ -67,7 +68,7 @@
 		</div>
 
 		<div class={styles.btn_div}>
-			<Button props={reverseArray} />
+			<Button props={myData} />
 		</div>
 	</div>
 </section>
