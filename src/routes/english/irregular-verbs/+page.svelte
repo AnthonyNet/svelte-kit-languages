@@ -9,8 +9,6 @@ const data = IrregularVerbs[random];
 return data;
 }
 
-console.log(sortData());
-
 </script>
 
 <Navbar />

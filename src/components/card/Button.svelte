@@ -9,7 +9,7 @@
 
 	// your script goes here
 	let switchState = false;
-	console.log(switchState);
+
 	function toggleSwitch() {
 		switchState = !switchState;
 	}

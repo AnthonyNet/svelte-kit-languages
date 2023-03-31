@@ -18,14 +18,14 @@
     propertyValues.shift();
 	const reverseArray = propertyValues.reverse();*/
 	const propsArray = [myData.base, myData.pastSimple, myData.pastParticiple];
-	console.log(propsArray);
+
 
 
 	const styles = {
 		section:
-			'section_Responsive flex justify-center items-center w-full h-[91vh] responsiveSection',
+		'section_Responsive flex justify-center items-center w-full h-[91vh] responsiveSection',
 		section_card:
-			'min-w-[350px] p-4 h-auto card my-8 xl:my-0 border-4 border-double border-blue-700 rounded-lg shadow-xl shadow-slate-600 text-center',
+			'min-w-[300px] p-4 h-auto card my-8 xl:my-0 border-4 border-double border-blue-700 rounded-lg shadow-xl shadow-slate-600 text-center',
 		score_div: 'py-3  border-b border-gray-300',
 		stars__div: 'flex items-center justify-center py-3 border-b border-gray-300 text-yellow-500',
 		h5: 'text-xl dark:bg-black font-medium mb-2 border-b border-gray-300',

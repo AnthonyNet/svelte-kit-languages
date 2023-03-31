@@ -15,7 +15,6 @@
 	export let props: string;
 	export let definition: string = '';
 
-	console.log(props);
 
 	function handleChange(e) {
 		if (props.startsWith(word)) {
