@@ -19,7 +19,7 @@
 	const reverseArray = propertyValues.reverse();*/
 	const propsArray = [myData.base, myData.pastSimple, myData.pastParticiple];
 	console.log(propsArray);
-	const reversePropsArray = propsArray.reverse();
+
 
 	const styles = {
 		section:
@@ -29,7 +29,7 @@
 		score_div: 'py-3 px-6 border-b border-gray-300',
 		stars__div: 'flex items-center justify-center py-3 border-b border-gray-300 text-yellow-500',
 		h5: 'text-xl dark:bg-black font-medium mb-2 border-b border-gray-300',
-		ul: 'flex flex-col items-center h-[100px]',
+		ul: 'flex flex-col items-center',
 		btn_div: 'flex flex-col border-t border-gray-300 text-gray-600'
 	} as const;
 </script>
@@ -51,8 +51,12 @@
 			<h5 class={styles.h5}>{myData.cz}</h5>
 
 			<ul class={styles.ul}>
-				{#each reversePropsArray as props}
-					<Input {props} />
+				{#each Object.entries(myData) as [key, value]}
+					{#if key !== 'cz'}
+						<li>
+							<Input definition={key} props={value} />
+						</li>
+					{/if}
 				{/each}
 			</ul>
 
