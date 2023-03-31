@@ -1,42 +1,41 @@
 <script lang="ts">
 	import Star from '../card/Star.svelte';
-    import Input from '../card/Input.svelte';
+	import Input from '../card/Input.svelte';
 	import Button from '../card/Button.svelte';
 
 	export let myData: any;
 
 	const score = 0;
-	let stars:number[]|[] = [];
+	let stars: number[] | [] = [];
 
 	//const randomNumber = Math.floor(Math.random() * myData.length);
 	/*------------------------------------------
     Props Data from Object to Array
          + first item deleted from Array
        -------------------------------------------*/
-    /*const propertyValues = Object.values(myData[randomNumber]);
+	/*const propertyValues = Object.values(myData[randomNumber]);
 	const cz = myData[randomNumber].cz;
     propertyValues.shift();
 	const reverseArray = propertyValues.reverse();*/
-	const propsArray = [myData.base, myData.pastSimple, myData.pastParticiple]
+	const propsArray = [myData.base, myData.pastSimple, myData.pastParticiple];
 	console.log(propsArray);
 	const reversePropsArray = propsArray.reverse();
 
-    const styles = {
+	const styles = {
 		section:
 			'section_Responsive flex justify-center items-center w-full h-[91vh] responsiveSection',
-		section_div:
-			'max-w-sm card my-8 xl:my-0 border-4 border-double border-blue-700 rounded-lg shadow-xl shadow-slate-600 text-center',
+		section_card:
+			'max-w-sm h-auto card my-8 xl:my-0 border-4 border-double border-blue-700 rounded-lg shadow-xl shadow-slate-600 text-center',
 		score_div: 'py-3 px-6 border-b border-gray-300',
 		stars__div: 'flex items-center justify-center py-3 border-b border-gray-300 text-yellow-500',
-		btn_div: 'flex flex-col border-t border-gray-300 text-gray-600',
 		h5: 'text-xl dark:bg-black font-medium mb-2 border-b border-gray-300',
-		ul: 'flex flex-col items-center relative h-[100px]'
+		ul: 'flex flex-col items-center h-[100px]',
+		btn_div: 'flex flex-col border-t border-gray-300 text-gray-600'
 	} as const;
 </script>
 
 <section class={styles.section}>
-<div class={styles.section_div}>
-
+	<div class={styles.section_card}>
 		<div class={styles.score_div}>
 			Celkové skóre: <span>0</span>
 		</div>
@@ -45,21 +44,16 @@
 		</div>
 
 		<div class={styles.stars__div}>
-
-				<Star />
-
+			<Star />
 		</div>
 
 		<div class="px-6">
-	<h5 class={styles.h5}>{myData.cz}</h5>
+			<h5 class={styles.h5}>{myData.cz}</h5>
 
-			<ul class={styles.ul} >
-
+			<ul class={styles.ul}>
 				{#each reversePropsArray as props}
-
-					<Input props={props}  />
+					<Input {props} />
 				{/each}
-
 			</ul>
 
 			<div class={styles.btn_div}>
