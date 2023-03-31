@@ -25,11 +25,11 @@
 		section:
 			'section_Responsive flex justify-center items-center w-full h-[91vh] responsiveSection',
 		section_card:
-			'max-w-sm h-auto card my-8 xl:my-0 border-4 border-double border-blue-700 rounded-lg shadow-xl shadow-slate-600 text-center',
-		score_div: 'py-3 px-6 border-b border-gray-300',
+			'min-w-[350px] p-4 h-auto card my-8 xl:my-0 border-4 border-double border-blue-700 rounded-lg shadow-xl shadow-slate-600 text-center',
+		score_div: 'py-3  border-b border-gray-300',
 		stars__div: 'flex items-center justify-center py-3 border-b border-gray-300 text-yellow-500',
 		h5: 'text-xl dark:bg-black font-medium mb-2 border-b border-gray-300',
-		ul: 'flex flex-col items-center',
+		ul: 'min-h-[150px] flex flex-col items-center justify-around',
 		btn_div: 'flex flex-col border-t border-gray-300 text-gray-600'
 	} as const;
 </script>
@@ -47,15 +47,13 @@
 			<Star />
 		</div>
 
-		<div class="px-6">
+		<main>
 			<h5 class={styles.h5}>{myData.cz}</h5>
 
 			<ul class={styles.ul}>
 				{#each Object.entries(myData) as [key, value]}
 					{#if key !== 'cz'}
-						<li>
 							<Input definition={key} props={value} />
-						</li>
 					{/if}
 				{/each}
 			</ul>
@@ -63,7 +61,7 @@
 			<div class={styles.btn_div}>
 				<button />
 			</div>
-		</div>
+		</main>
 
 		<div class={styles.btn_div}>
 			<Button props={myData} />
