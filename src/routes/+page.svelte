@@ -17,6 +17,7 @@
   button:
     "bg-teal-500 px-6 py-2 mt-[8rem] mb-8 font-semibold text-white rounded-full delay-500 duration-1000 scale-0 group-hover:scale-125",
 };
+
 </script>
 
 
@@ -27,7 +28,7 @@
     <h1 class="my-2 sm:mt-0">
   Welcome
     </h1>
-   
+
 
     <div class={styles.card__div}>
       <div class={styles.card__div__div}>
@@ -41,7 +42,7 @@
         Nadpis
             </h2>
 
-         
+
             <button class={styles.button}>Last update:</button>
             <h2 class="text-sm font-semibold ">
           hhh
@@ -51,7 +52,7 @@
       </div>
     </div>
 
- 
+
   </section>
 
 <style>

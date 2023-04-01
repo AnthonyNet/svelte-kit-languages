@@ -5,7 +5,6 @@
 		input: 'border-2 py-1 text-center w-full font-extrabold irrInput',
 		input_right: 'text-green-500',
 		input_wrong: 'text-red-500'
-
 	};
 </script>
 
@@ -15,13 +14,6 @@
 	export let props: string;
 	export let definition: string = '';
 
-
-	function handleChange(e) {
-		if (props.startsWith(word)) {
-
-		}
-
-	}
 </script>
 
 <li class={word === props ? style.li + ' ' + style.li_right : style.li}>
@@ -31,6 +23,6 @@
 		placeholder={definition}
 		bind:value={word}
 		readonly={word === props ? true : false}
-		on:input={handleChange}
+
 	/>
 </li>

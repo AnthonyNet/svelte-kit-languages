@@ -1,10 +1,12 @@
 <script lang="ts">
 	import Star from '../card/Star.svelte';
 	import Input from '../card/Input.svelte';
-	import Button from '../card/Button.svelte';
 
+	import Footer from '../card/Footer.svelte';
 	export let props;
-
+/* ------------------------------------ */
+/* SORT PROPS */
+/* ------------------------------------ */
 	const sortData = () => {
 		const random = Math.floor(Math.random() * props.length);
 		const data = props[random];
@@ -12,8 +14,6 @@
 	};
 
 	let sorted = sortData();
-
-	console.log(sorted);
 
 	const score: number = 0;
 	let stars: number[] | [] = [];
@@ -30,6 +30,9 @@
 		});
 	};
 
+	/* ------------------------------------ */
+	/* STYLES */
+	/* ------------------------------------ */
 	const styles = {
 		section:
 			'section_Responsive flex justify-center items-center w-full h-[91vh] responsiveSection',
@@ -39,7 +42,6 @@
 		stars__div: 'flex items-center justify-center py-3 border-b border-gray-300 text-yellow-500',
 		h5: 'text-xl dark:bg-black font-medium mb-2 border-b border-gray-300',
 		ul: 'min-h-[150px] flex flex-col items-center justify-around',
-		btn_div: 'flex flex-col border-t border-gray-300 text-gray-600'
 	} as const;
 </script>
 
@@ -66,16 +68,8 @@
 					{/if}
 				{/each}
 			</ul>
-
-			<div class={styles.btn_div}>
-				<button />
-			</div>
 		</main>
 
-		<div class={styles.btn_div}>
-			<Button props={sorted} />
-		</div>
-
-		<button class="p-4 bg-blue-500" on:click={handleClick}>click</button>
+		<Footer handleClick={handleClick} props={sorted}/>
 	</div>
 </section>
