@@ -1,5 +1,6 @@
 <script>
     import Navbar from '../components/navbar/Navbar.svelte';
+
     const styles = {
   section:
     "responsiveSection flex flex-col justify-center items-center w-full min-h-[88vh] h-auto sm:h-[90%] border-red-300  border-t-2",

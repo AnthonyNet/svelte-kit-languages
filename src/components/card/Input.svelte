@@ -1,4 +1,5 @@
 <script context="module">
+
 	const style = {
 		li: 'flex flex-col items-center',
 		li_right: 'bg-green-500',
@@ -9,17 +10,21 @@
 </script>
 
 <script lang="ts">
-	let score: number = 0;
+
 	export let word: string = '';
 	export let props: string;
 	export let definition: string = '';
+	export let score:number;
+
+
 
 </script>
-
 <li class={word === props ? style.li + ' ' + style.li_right : style.li}>
 	<input
 		type="text"
-		class={props.startsWith(word)? style.input + ' ' + style.input_right : style.input+' '+style.input_wrong}
+		class={props.startsWith(word)
+			? style.input + ' ' + style.input_right
+			: style.input + ' ' + style.input_wrong}
 		placeholder={definition}
 		bind:value={word}
 		readonly={word === props ? true : false}

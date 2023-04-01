@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Star from '../card/Star.svelte';
 	import Input from '../card/Input.svelte';
-
+	import Score from '../card/Score.svelte';
 	import Footer from '../card/Footer.svelte';
 	export let props;
 /* ------------------------------------ */
@@ -15,7 +15,7 @@
 
 	let sorted = sortData();
 
-	const score: number = 0;
+	let score: number = 0;
 	let stars: number[] | [] = [];
 
 	const propsArray = [sorted.base, sorted.pastSimple, sorted.pastParticiple];
@@ -23,12 +23,14 @@
 	const handleClick = () => {
 		sorted = sortData();
 		const el = document.querySelectorAll('.irrInput');
+
 		el.forEach((item) => {
 			item.classList.remove('text-green-500');
 			item.classList.remove('text-red-500');
 			item.value = '';
 		});
 	};
+
 
 	/* ------------------------------------ */
 	/* STYLES */
@@ -43,12 +45,13 @@
 		h5: 'text-xl dark:bg-black font-medium mb-2 border-b border-gray-300',
 		ul: 'min-h-[150px] flex flex-col items-center justify-around',
 	} as const;
+	const totalScore =localStorage.getItem('totalScore');
 </script>
 
 <section class={styles.section}>
 	<div class={styles.section_card}>
 		<div class={styles.score_div}>
-			Celkové skóre: <span>0</span>
+			Celkové skóre: <Score  />
 		</div>
 		<div class={styles.score_div}>
 			Momentální skóre: <span>{score}</span>
@@ -64,7 +67,7 @@
 			<ul class={styles.ul}>
 				{#each Object.entries(sorted) as [key, value]}
 					{#if key !== 'cz'}
-						<Input definition={key} props={value} />
+						<Input definition={key} props={value} score={score}/>
 					{/if}
 				{/each}
 			</ul>
