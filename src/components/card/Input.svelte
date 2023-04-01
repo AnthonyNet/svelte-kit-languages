@@ -2,7 +2,7 @@
 	const style = {
 		li: 'flex flex-col items-center',
 		li_right: 'bg-green-500',
-		input: 'border-2 py-1 text-center w-full font-extrabold',
+		input: 'border-2 py-1 text-center w-full font-extrabold irrInput',
 		input_right: 'text-green-500',
 		input_wrong: 'text-red-500'
 
@@ -24,7 +24,7 @@
 	}
 </script>
 
-<li class={word === props ? style.li + ' ' + style.li_right : null}>
+<li class={word === props ? style.li + ' ' + style.li_right : style.li}>
 	<input
 		type="text"
 		class={props.startsWith(word)? style.input + ' ' + style.input_right : style.input+' '+style.input_wrong}

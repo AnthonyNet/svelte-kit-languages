@@ -3,27 +3,36 @@
 	import Input from '../card/Input.svelte';
 	import Button from '../card/Button.svelte';
 
-	export let myData: any;
+	export let props;
 
-	const score = 0;
+	const sortData = () => {
+		const random = Math.floor(Math.random() * props.length);
+		const data = props[random];
+		return data;
+	};
+
+	let sorted = sortData();
+
+	console.log(sorted);
+
+	const score: number = 0;
 	let stars: number[] | [] = [];
 
-	//const randomNumber = Math.floor(Math.random() * myData.length);
-	/*------------------------------------------
-    Props Data from Object to Array
-         + first item deleted from Array
-       -------------------------------------------*/
-	/*const propertyValues = Object.values(myData[randomNumber]);
-	const cz = myData[randomNumber].cz;
-    propertyValues.shift();
-	const reverseArray = propertyValues.reverse();*/
-	const propsArray = [myData.base, myData.pastSimple, myData.pastParticiple];
+	const propsArray = [sorted.base, sorted.pastSimple, sorted.pastParticiple];
 
-
+	const handleClick = () => {
+		sorted = sortData();
+		const el = document.querySelectorAll('.irrInput');
+		el.forEach((item) => {
+			item.classList.remove('text-green-500');
+			item.classList.remove('text-red-500');
+			item.value = '';
+		});
+	};
 
 	const styles = {
 		section:
-		'section_Responsive flex justify-center items-center w-full h-[91vh] responsiveSection',
+			'section_Responsive flex justify-center items-center w-full h-[91vh] responsiveSection',
 		section_card:
 			'min-w-[300px] p-4 h-auto card my-8 xl:my-0 border-4 border-double border-blue-700 rounded-lg shadow-xl shadow-slate-600 text-center',
 		score_div: 'py-3  border-b border-gray-300',
@@ -48,12 +57,12 @@
 		</div>
 
 		<main>
-			<h5 class={styles.h5}>{myData.cz}</h5>
+			<h5 class={styles.h5}>{sorted.cz}</h5>
 
 			<ul class={styles.ul}>
-				{#each Object.entries(myData) as [key, value]}
+				{#each Object.entries(sorted) as [key, value]}
 					{#if key !== 'cz'}
-							<Input definition={key} props={value} />
+						<Input definition={key} props={value} />
 					{/if}
 				{/each}
 			</ul>
@@ -64,7 +73,9 @@
 		</main>
 
 		<div class={styles.btn_div}>
-			<Button props={myData} />
+			<Button props={sorted} />
 		</div>
+
+		<button class="p-4 bg-blue-500" on:click={handleClick}>click</button>
 	</div>
 </section>
