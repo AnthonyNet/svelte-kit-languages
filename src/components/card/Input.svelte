@@ -15,11 +15,13 @@
 	export let props: string;
 	export let definition: string = '';
 	export let score:number;
-
-
+	let currentScore = localStorage.getItem("totalScore");
+	currentScore = currentScore ? parseInt(currentScore) : 0;
+	localStorage.setItem("totalScore", currentScore);
 
 </script>
 <li class={word === props ? style.li + ' ' + style.li_right : style.li}>
+
 	<input
 		type="text"
 		class={props.startsWith(word)
@@ -28,6 +30,12 @@
 		placeholder={definition}
 		bind:value={word}
 		readonly={word === props ? true : false}
-
+		on:change={(e) => {
+			if (e.target.value === props) {
+				score++;
+				localStorage.setItem("totalScore", (Number(currentScore) + 1).toString());
+				currentScore = localStorage.getItem("totalScore");
+			}
+		}}
 	/>
 </li>
