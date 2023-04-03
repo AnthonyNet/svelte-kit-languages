@@ -1,6 +1,7 @@
-<script>
+<script lang="ts">
     import Icon from '@iconify/svelte';
-    export let stars;
+    export let stars: number[] | [] = [0];
+
 </script>
 
 {#each stars as star}

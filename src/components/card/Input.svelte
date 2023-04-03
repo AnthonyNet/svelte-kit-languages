@@ -1,8 +1,8 @@
 <script context="module">
 
 	const style = {
-		li: 'flex flex-col items-center',
-		li_right: 'bg-green-500',
+		li: 'flex flex-col items-center w-full',
+		li_right:  'border-green-500 border-2',
 		input: 'border-2 py-1 text-center w-full font-extrabold irrInput',
 		input_right: 'text-green-500',
 		input_wrong: 'text-red-500'

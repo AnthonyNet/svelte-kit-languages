@@ -30,9 +30,6 @@
 			item.classList.remove('text-red-500');
 			item.value = '';
 		});
-		stars.push(0);
-		console.log(stars);
-
 	};
 
 
