@@ -57,7 +57,13 @@
       Menu
     </div>
   </div>
-	
+
 
 	<NavbarMobile />
 </nav>
+
+<style>
+	.navDetails a:not(:first-child) {
+		text-decoration: line-through;
+	}
+</style>
