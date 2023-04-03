@@ -1,4 +1,4 @@
-<script context="module">
+<script context="module" lang="ts">
 
 	const style = {
 		li: 'flex flex-col items-center w-full',
