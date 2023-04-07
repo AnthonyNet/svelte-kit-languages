@@ -4,7 +4,7 @@
 	const styles = {
 		ul: 'flex  justify-around items-center',
 		btn_div: 'flex flex-col border-t border-gray-300 text-gray-600',
-		footer: '',
+		footer: ''
 	};
 
 	// your script goes here
