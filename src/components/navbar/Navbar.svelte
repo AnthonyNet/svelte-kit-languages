@@ -1,7 +1,14 @@
 <script>
 	import NavbarMobile from './Navbar_mobile.svelte';
-  import {IrregularVerbs, OxfordB1, OxfordB2, OxfordC1, LukesPhrasal, VerbenData, Goethe } from '../../myData/';
-
+	import {
+		IrregularVerbs,
+		OxfordB1,
+		OxfordB2,
+		OxfordC1,
+		LukesPhrasal,
+		VerbenData,
+		Goethe
+	} from '../../myData/';
 
 	const styles = {
 		nav: 'flex justify-center items-center w-full  min-h-[100px] shadow-xl z-[400] px-4',
@@ -10,8 +17,6 @@
 		article: 'justify-around items-start w-full h-full hidden md:flex',
 		nav__ul: 'hidden flex flex-col border-solid border-t-4 border-sky-400 navDetails'
 	};
-
-
 </script>
 
 <nav class={styles.nav}>
@@ -49,15 +54,10 @@
 			</details>
 		</article>
 
-	  <span class="hidden md:flex  bottom-2 right-4 text-3xl">
-      Dark
-    </span>
+		<span class="hidden md:flex  bottom-2 right-4 text-3xl"> Dark </span>
 
-    <div class="text-4xl md:hidden ml-auto">
-      Menu
-    </div>
-  </div>
-
+		<div class="text-4xl md:hidden ml-auto">Menu</div>
+	</div>
 
 	<NavbarMobile />
 </nav>
