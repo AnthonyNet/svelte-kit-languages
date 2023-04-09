@@ -4,6 +4,7 @@
 
 	import Footer from '../card/Footer.svelte';
 	export let props;
+
 	/* ------------------------------------ */
 	/* SORT PROPS */
 	/* ------------------------------------ */
@@ -58,7 +59,9 @@
 		</div>
 
 		<div class={styles.stars__div}>
-			<Star {stars} />
+			{#each stars as star}
+				<span>*</span>
+			{/each}
 		</div>
 
 		<main>
