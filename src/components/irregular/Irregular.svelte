@@ -33,6 +33,11 @@
 		});
 	};
 
+	const handleScore = () => {
+			stars.push(0);
+			console.log(stars);
+
+	};
 	/* ------------------------------------ */
 	/* STYLES */
 	/* ------------------------------------ */
@@ -57,11 +62,9 @@
 		<div class={styles.score_div}>
 			Momentální skóre: <span>{score}</span>
 		</div>
-
+		<button on:click={handleScore}>ne</button>
 		<div class={styles.stars__div}>
-			{#each stars as star}
-				<span>*</span>
-			{/each}
+			{$stars} ble
 		</div>
 
 		<main>
