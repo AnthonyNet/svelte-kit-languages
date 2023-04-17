@@ -3,6 +3,5 @@
 
 </script>
 
-
 <Navbar />
 <h2>pagination</h2>

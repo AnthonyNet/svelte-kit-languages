@@ -3,6 +3,5 @@
 
 </script>
 
-
 <Navbar />
 <h2>C1</h2>
