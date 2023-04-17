@@ -4,5 +4,6 @@
     import {IrregularVerbs} from '../../../myData';
 </script>
 
+
 <Navbar />
 <Irregular props={IrregularVerbs}/>
